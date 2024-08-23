@@ -33,6 +33,6 @@ public class CategoryAdapter implements ICategoryPersistencePort {
         if (categories.isEmpty()) {
             throw new NoDataFoundException();
         }
-        return  categoryEntityMapper.toModelList(categories);
+        return categoryEntityMapper.toModelList(categories);
     }
 }
