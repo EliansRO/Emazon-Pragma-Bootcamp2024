@@ -9,7 +9,8 @@ public class DomainConstants {
         NAME,
         DESCRIPTION,
         QUANTITY,
-        PRICE
+        PRICE,
+        CATEGORIES
     }
 
     public static final String FIELD_NAME_NULL_MESSAGE = "Field 'name' cannot be null";
