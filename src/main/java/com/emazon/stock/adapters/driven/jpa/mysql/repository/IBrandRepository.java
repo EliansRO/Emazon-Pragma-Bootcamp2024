@@ -3,6 +3,7 @@ package com.emazon.stock.adapters.driven.jpa.mysql.repository;
 import com.emazon.stock.adapters.driven.jpa.mysql.entity.BrandEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 

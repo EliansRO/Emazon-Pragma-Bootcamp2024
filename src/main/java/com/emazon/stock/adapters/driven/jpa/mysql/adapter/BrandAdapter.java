@@ -4,6 +4,7 @@ import com.emazon.stock.adapters.driven.jpa.mysql.entity.BrandEntity;
 import com.emazon.stock.adapters.driven.jpa.mysql.exception.BrandAlreadyExistsException;
 import com.emazon.stock.adapters.driven.jpa.mysql.exception.NoDataFoundException;
 import com.emazon.stock.adapters.driven.jpa.mysql.mapper.IBrandEntityMapper;
+import com.emazon.stock.adapters.driven.jpa.mysql.mapper.ICategoryEntityMapper;
 import com.emazon.stock.adapters.driven.jpa.mysql.repository.IBrandRepository;
 import com.emazon.stock.domain.model.Brand;
 import com.emazon.stock.domain.spi.IBrandPersistencePort;
@@ -16,14 +17,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BrandAdapter implements IBrandPersistencePort {
     private final IBrandRepository brandRepository;
-    private final IBrandEntityMapper brandcategoryEntityMapper;
+    private final IBrandEntityMapper brandEntityMapper;
 
     @Override
     public void saveBrand(Brand brand) {
         if (brandRepository.findByName(brand.getName()).isPresent()) {
             throw new BrandAlreadyExistsException();
         }
-        brandRepository.save(brandEnitityMapper.toEntity(brand));
+        brandRepository.save(brandEntityMapper.toEntity(brand));
     }
 
     @Override
@@ -33,6 +34,6 @@ public class BrandAdapter implements IBrandPersistencePort {
         if (brands.isEmpty()) {
             throw new NoDataFoundException();
         }
-        return brandEnitityMapper.toModelList(brands);
+        return brandEntityMapper.toModelList(brands);
     }
 }

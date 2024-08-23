@@ -5,7 +5,6 @@ import com.emazon.stock.adapters.driving.http.dto.response.CategoryResponse;
 import com.emazon.stock.adapters.driving.http.mapper.ICategoryRequestMapper;
 import com.emazon.stock.adapters.driving.http.mapper.ICategoryResponseMapper;
 import com.emazon.stock.domain.api.ICategoryServicePort;
-import com.emazon.stock.domain.spi.ICategoryPersistencePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
